@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.healthcare.HelloController" spacing="10" alignment="CENTER" style="-fx-padding: 20;">
+    <TabPane fx:id="tabPane">
+        <Tab text="Patient Registration">
+            <content>
+                <VBox spacing="15" alignment="CENTER">
+                    <Label text="Patient Registration" style="-fx-font-size: 24; -fx-font-weight: bold;"/>
+                    <HBox spacing="10">
+                        <Label text="Name:"/>
+                        <TextField fx:id="patientNameField" promptText="Enter Patient Name"/>
+                    </HBox>
+                    <HBox spacing="10">
+                        <Label text="Medical History:"/>
+                        <TextField fx:id="medicalHistoryField" promptText="Enter Medical History"/>
+                    </HBox>
+                    <HBox spacing="10">
+                        <Label text="Ongoing Treatments:"/>
+                        <TextField fx:id="ongoingTreatmentsField" promptText="Enter Ongoing Treatments"/>
+                    </HBox>
+                    <HBox spacing="10">
+                        <Label text="Allergies:"/>
+                        <TextField fx:id="allergiesField" promptText="Enter Allergies"/>
+                    </HBox>
+                    <HBox spacing="10">
+                        <Label text="Emergency Contact:"/>
+                        <TextField fx:id="emergencyContactField" promptText="Enter Emergency Contact"/>
+                    </HBox>
+                    <Button text="Register" onAction="#handleRegister" style="-fx-font-size: 14; -fx-padding: 10;"/>
+                    <Button text="Back" onAction="#switchToMain" />
+                </VBox>
+            </content>
+        </Tab>
+        <Tab text="Appointment Booking">
+            <content>
+                <VBox spacing="15" alignment="CENTER">
+                    <Label text="Appointment Booking" style="-fx-font-size: 24; -fx-font-weight: bold;"/>
+                    <HBox spacing="10">
+                        <Label text="Patient ID:"/>
+                        <TextField fx:id="appointmentPatientIdField" promptText="Enter Patient ID"/>
+                    </HBox>
+                    <HBox spacing="10">
+                        <Label text="Select Doctor:"/>
+                        <ComboBox fx:id="doctorComboBox" promptText="Choose a Doctor"/>
+                    </HBox>
+                    <HBox spacing="10">
+                        <Label text="Appointment Date:"/>
+                        <DatePicker fx:id="datePicker"/>
+                    </HBox>
+                    <Button text="Book Appointment" onAction="#handleBookAppointment" style="-fx-font-size: 14; -fx-padding: 10;"/>
+                    <Button text="Back" onAction="#switchToMain" />
+                </VBox>
+            </content>
+        </Tab>
+        <Tab text="Doctor Management">
+            <content>
+                <VBox spacing="15" alignment="CENTER">
+                    <Label text="Doctor Management" style="-fx-font-size: 24; -fx-font-weight: bold;"/>
+                    <HBox spacing="10">
+                        <Label text="Doctor ID:"/>
+                        <TextField fx:id="doctorIdField" promptText="Enter Doctor ID"/>
+                    </HBox>
+                    <HBox spacing="10">
+                        <Label text="Name:"/>
+                        <TextField fx:id="doctorNameField" promptText="Enter Doctor Name"/>
+                    </HBox>
+                    <HBox spacing="10">
+                        <Label text="Specialization:"/>
+                        <TextField fx:id="specializationField" promptText="Enter Specialization"/>
+                    </HBox>
+                    <HBox spacing="10">
+                        <Label text="Contact Number:"/>
+                        <TextField fx:id="contactNumberField" promptText="Enter Contact Number"/>
+                    </HBox>
+                    <HBox spacing="10">
+                        <Label text="Availability:"/>
+                        <ComboBox fx:id="availabilityComboBox" promptText="Select Availability"/>
+                    </HBox>
+                    <Button text="Register Doctor" onAction="#handleRegisterDoctor" style="-fx-font-size: 14; -fx-padding: 10;"/>
+                    <Button text="Back" onAction="#switchToMain" />
+                </VBox>
+            </content>
+        </Tab>
+    </TabPane>
+</VBox>
